@@ -34,6 +34,20 @@ android {
     buildFeatures {
         viewBinding true
     }
+    flavorDimensions 'env'
+    productFlavors {
+        beta {
+            dimension = 'env'
+            applicationIdSuffix = '.beta'
+
+            buildConfigField "String", "API_URL", '"http://semtpati-api-dev.kocsistem.com.tr"'
+        }
+        prod {
+            dimension = 'env'
+
+            buildConfigField "String", "API_URL", '"http://37.131.251.245:8080"'
+        }
+    }
 }
 
 dependencies {

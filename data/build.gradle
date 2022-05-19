@@ -29,6 +29,19 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
+    flavorDimensions 'env'
+    productFlavors {
+        beta {
+            dimension = 'env'
+
+            buildConfigField "String", "API_URL", '"http://semtpati-api-dev.kocsistem.com.tr"'
+        }
+        prod {
+            dimension = 'env'
+
+            buildConfigField "String", "API_URL", '"http://37.131.251.245:8080"'
+        }
+    }
 }
 
 dependencies {
@@ -36,7 +49,7 @@ dependencies {
 
     implementation 'com.google.dagger:hilt-android:2.38.1'
     kapt 'com.google.dagger:hilt-compiler:2.38.1'
-    
+
     implementation project(':core')
 
     testImplementation 'junit:junit:4.13.2'
