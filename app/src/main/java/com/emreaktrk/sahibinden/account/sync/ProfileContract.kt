@@ -1,5 +1,5 @@
 package com.emreaktrk.sahibinden.account.sync
 
 object ProfileContract {
-    const val AUTHORITY = "com.kocholding.semtpati.profile"
+    const val AUTHORITY = "com.emreaktrk.sahibinden.profile"
 }

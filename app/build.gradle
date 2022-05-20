@@ -2,6 +2,7 @@ plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
     id 'kotlin-kapt'
+    id 'dagger.hilt.android.plugin'
 }
 
 android {
@@ -40,14 +41,13 @@ android {
         beta {
             dimension = 'env'
             applicationIdSuffix = '.beta'
-
-            buildConfigField "String", "API_URL", '"http://semtpati-api-dev.kocsistem.com.tr"'
         }
         prod {
             dimension = 'env'
-
-            buildConfigField "String", "API_URL", '"http://37.131.251.245:8080"'
         }
+    }
+    kapt {
+        correctErrorTypes true
     }
 }
 
@@ -55,8 +55,8 @@ dependencies {
     implementation 'androidx.navigation:navigation-fragment-ktx:2.4.2'
     implementation 'androidx.navigation:navigation-ui-ktx:2.4.2'
 
-    implementation 'com.google.dagger:hilt-android:2.38.1'
-    kapt 'com.google.dagger:hilt-compiler:2.38.1'
+    implementation 'com.google.dagger:hilt-android:2.42'
+    kapt 'com.google.dagger:hilt-android-compiler:2.42'
 
     implementation project(':presentation')
     implementation project(':domain')

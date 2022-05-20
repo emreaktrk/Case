@@ -34,7 +34,7 @@
         <service
             android:name=".account.AuthenticatorService"
             android:exported="false"
-            android:permission="com.kocholding.permission.AUTHENTICATE">
+            android:permission="com.emreaktrk.permission.AUTHENTICATE">
             <intent-filter>
                 <action android:name="android.accounts.AccountAuthenticator" />
             </intent-filter>
