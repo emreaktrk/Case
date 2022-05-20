@@ -8,7 +8,7 @@ import androidx.viewbinding.ViewBinding
 
 abstract class BaseFragment<B : ViewBinding>(@LayoutRes val layoutResId: Int) : Fragment(layoutResId) {
 
-    private var binding: B? = null
+    protected var binding: B? = null
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)

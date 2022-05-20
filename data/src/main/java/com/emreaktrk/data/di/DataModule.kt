@@ -1,25 +1,32 @@
 package com.emreaktrk.data.di
 
-import com.emreaktrk.data.ApiClient
 import com.emreaktrk.data.BuildConfig
+import com.emreaktrk.data.api.ApiClient
 import com.google.gson.Gson
 import dagger.Module
 import dagger.Provides
-import dagger.hilt.migration.DisableInstallInCheck
+import dagger.hilt.InstallIn
+import dagger.hilt.components.SingletonComponent
 import okhttp3.OkHttpClient
+import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
+
 @Module
-@DisableInstallInCheck
+@InstallIn(SingletonComponent::class)
 object DataModule {
 
     @Provides
     fun provideApiClient(
         gson: Gson,
     ): ApiClient {
+        val logging = HttpLoggingInterceptor()
+        logging.setLevel(HttpLoggingInterceptor.Level.BODY)
+
         val http = OkHttpClient
             .Builder()
+            .addInterceptor(logging)
             .build()
 
         return Retrofit

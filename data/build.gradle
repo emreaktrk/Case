@@ -35,12 +35,12 @@ android {
         beta {
             dimension = 'env'
 
-            buildConfigField "String", "API_URL", '"http://semtpati-api-dev.kocsistem.com.tr"'
+            buildConfigField "String", "API_URL", '"https://sap64g2oub.execute-api.us-east-1.amazonaws.com/"'
         }
         prod {
             dimension = 'env'
 
-            buildConfigField "String", "API_URL", '"http://37.131.251.245:8080"'
+            buildConfigField "String", "API_URL", '"https://sap64g2oub.execute-api.us-east-1.amazonaws.com/"'
         }
     }
     kapt {

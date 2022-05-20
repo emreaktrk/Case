@@ -47,7 +47,7 @@
 
 
     <string name="login_get_started">Get started</string>
-    <string name="login_headline">Manage Your freelance business with us!</string>
+    <string name="login_headline">Manage your freelance business with us!</string>
     <string name="login_description">Taken less than 10 minutes to fill out all the information needed to start your business.</string>
     <string name="login_email">E-mail</string>
     <string name="login_password">Password</string>
