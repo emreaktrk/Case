@@ -7,6 +7,7 @@
     <string name="next">Next</string>
     <string name="previous">Previous</string>
 
+
     <string name="lorem_ipsum">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam in scelerisque sem. Mauris
         volutpat, dolor id interdum ullamcorper, risus dolor egestas lectus, sit amet mattis purus
@@ -43,4 +44,15 @@
         libero vel nunc consequat, quis tincidunt nisl eleifend. Cras bibendum enim a justo luctus
         vestibulum. Fusce dictum libero quis erat maximus, vitae volutpat diam dignissim.
     </string>
+
+
+    <string name="login_get_started">Get started</string>
+    <string name="login_headline">Manage Your freelance business with us!</string>
+    <string name="login_description">Taken less than 10 minutes to fill out all the information needed to start your business.</string>
+    <string name="login_email">E-mail</string>
+    <string name="login_password">Password</string>
+    <string name="login_hint_email">Must be valid e-mail</string>
+    <string name="login_hint_password">Must be at least 6 length</string>
+    <string name="login_caption">By signing up you are agreeing to our</string>
+    <string name="login_terms_and_conditions">Terms and Conditions</string>
 </resources>
