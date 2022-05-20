@@ -20,7 +20,6 @@ interface BindingSupport : LifecycleObserver {
 }
 
 interface ViewModelSupport {
-
     fun <T : ViewModel> invoke(owner: ViewModelStoreOwner, vmClass: Class<T>): T {
         return ViewModelProvider(owner)[vmClass]
     }

@@ -11,13 +11,25 @@ class AuthenticationUseCase @Inject constructor(
 ) : UseCase<AuthenticationUseCase.Params, Token>() {
     override fun onInvoke(input: Params): Flow<Token> {
         return flow {
+            if (input.email.isNullOrEmpty()) {
+                throw NullPointerException("Email can not be null.")
+            }
+
+            if (input.password.isNullOrEmpty() && input.password!!.length < 7) {
+                throw NullPointerException("Password can not be null.")
+            }
+
+            if (input.password.length < 7) {
+                throw IllegalArgumentException("Password must be at least 6 length.")
+            }
+
             val token = repo.authentication(input.email, input.password)
             emit(token)
         }
     }
 
     data class Params(
-        val email: String,
-        val password: String,
+        val email: String?,
+        val password: String?,
     )
 }

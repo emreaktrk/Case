@@ -6,7 +6,8 @@ import androidx.annotation.LayoutRes
 import androidx.fragment.app.Fragment
 import androidx.viewbinding.ViewBinding
 
-abstract class BaseFragment<B : ViewBinding>(@LayoutRes val layoutResId: Int) : Fragment(layoutResId) {
+abstract class BaseFragment<B : ViewBinding>(@LayoutRes val layoutResId: Int) :
+    Fragment(layoutResId) {
 
     protected var binding: B? = null
 
@@ -21,5 +22,13 @@ abstract class BaseFragment<B : ViewBinding>(@LayoutRes val layoutResId: Int) : 
     override fun onDestroyView() {
         super.onDestroyView()
         binding = null
+    }
+
+    fun requireBinding(): B {
+        if (this is BindingSupport) {
+            return binding!!
+        }
+
+        throw UnsupportedOperationException("Missing BindingSupport")
     }
 }
