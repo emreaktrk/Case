@@ -4,5 +4,5 @@ import androidx.annotation.Keep
 
 @Keep
 data class Me(
-    val username: String
+    val email: String
 )

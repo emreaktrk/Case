@@ -72,7 +72,7 @@ class AccountEditor(private val context: Context) {
         token: String,
         me: Me
     ) {
-        val account = Account(me.username, AccountContract.ACCOUNT_TYPE)
+        val account = Account(me.email, AccountContract.ACCOUNT_TYPE)
 
         AccountManager
             .get(context)
