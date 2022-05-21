@@ -5,7 +5,7 @@ import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.viewModelScope
 import com.emreaktrk.core.model.Token
 import com.emreaktrk.core.model.WordModel
-import com.emreaktrk.domain.GetWordsUseCase
+import com.emreaktrk.domain.GetWordsOfflineFirstUseCase
 import com.emreaktrk.sahibinden.account.AccountEditor
 import dagger.hilt.android.scopes.FragmentScoped
 import kotlinx.coroutines.Dispatchers
@@ -17,7 +17,7 @@ import javax.inject.Inject
 @FragmentScoped
 class WordViewModel @Inject constructor(
     application: Application,
-    private val useCase: GetWordsUseCase,
+    private val useCase: GetWordsOfflineFirstUseCase,
     private val accountEditor: AccountEditor,
 ) : AndroidViewModel(application) {
 

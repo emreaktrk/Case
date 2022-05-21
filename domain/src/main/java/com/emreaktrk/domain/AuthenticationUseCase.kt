@@ -9,7 +9,7 @@ import javax.inject.Inject
 class AuthenticationUseCase @Inject constructor(
     private val repo: UserRepository,
 ) : UseCase<AuthenticationUseCase.Params, Token>() {
-    override fun onInvoke(input: Params): Flow<Token> {
+    override suspend fun onInvoke(input: Params): Flow<Token> {
         return flow {
             if (input.email.isNullOrEmpty()) {
                 throw NullPointerException("E-mail can not be null.")

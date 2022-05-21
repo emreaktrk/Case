@@ -7,7 +7,7 @@ import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 import javax.inject.Inject
 
-class GetWordsUseCase @Inject constructor(
+class GetWordsOfflineFirstUseCase @Inject constructor(
     private val repo: WordRepository,
 ) : UseCase<Token?, List<WordModel>>() {
     override suspend fun onInvoke(input: Token?): Flow<List<WordModel>> {
@@ -18,6 +18,10 @@ class GetWordsUseCase @Inject constructor(
 
             val words = repo.shuffle(input)
             emit(words)
+
+            repo.shuffleAsFlow(input).collect {
+                emit(it)
+            }
         }
     }
 }
