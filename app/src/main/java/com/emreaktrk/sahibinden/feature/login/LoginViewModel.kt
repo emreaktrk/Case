@@ -21,8 +21,8 @@ class LoginViewModel @Inject constructor(
 
     var actionHandler: ActionHandler? = null
 
-    val email = MutableLiveData<String>()
-    val password = MutableLiveData<String>()
+    val email = MutableLiveData<String>("ozgunergen@yandex.com")
+    val password = MutableLiveData<String>("Qaz!123")
 
     fun authenticate() {
         viewModelScope.launch {
@@ -36,7 +36,7 @@ class LoginViewModel @Inject constructor(
                     actionHandler?.onError(message)
                 }
                 .collect {
-                    val me = Me("emreaktrk@hotmail.com")
+                    val me = Me(email.value!!)
                     accountEditor.login(it, me)
 
                     actionHandler?.onAuthenticated()

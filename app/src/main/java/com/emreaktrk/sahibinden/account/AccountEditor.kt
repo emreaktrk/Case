@@ -5,6 +5,7 @@ import android.accounts.AccountManager
 import android.content.ContentResolver
 import android.content.Context
 import android.os.Bundle
+import com.emreaktrk.core.model.Token
 import com.emreaktrk.sahibinden.account.sync.ProfileContract
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
@@ -26,20 +27,18 @@ class AccountEditor(private val context: Context) {
             .isEmpty()
             .not()
 
-    val token: String?
+    val token: Token?
         get() {
             val account = AccountManager
                 .get(context)
                 .getAccountsByType(AccountContract.ACCOUNT_TYPE)[0]
 
             return try {
-                "Bearer ${
-                    AccountManager
-                        .get(context)
-                        .getAuthToken(account, AccountContract.FULL_ACCESS, null, null, null, null)
-                        .result
-                        .getString(AccountManager.KEY_AUTHTOKEN)
-                }"
+                AccountManager
+                    .get(context)
+                    .getAuthToken(account, AccountContract.FULL_ACCESS, null, null, null, null)
+                    .result
+                    .getString(AccountManager.KEY_AUTHTOKEN)
             } catch (e: Exception) {
                 null
             }

@@ -26,6 +26,8 @@ class WordFragment : BaseFragment<FragmentWordBinding>(R.layout.fragment_word),
 
         vm.actionHandler = this
         requireBinding().vm = vm
+
+        vm.getWords()
     }
 
     override fun onError(message: String) {
@@ -38,5 +40,8 @@ class WordFragment : BaseFragment<FragmentWordBinding>(R.layout.fragment_word),
         Snackbar
             .make(requireView(), "Words loaded.", Snackbar.LENGTH_LONG)
             .show()
+
+        val adapter = WordAdapter(list)
+        requireBinding().recycler.adapter = adapter
     }
 }

@@ -7,7 +7,8 @@ typealias WordsResponse = List<WordResponse>
 data class WordResponse(
     val _id: String,
     val word: Word,
-    val definition: String,
+    val defination: String,
+    val meaning: String,
     val example: String,
     val focus: Boolean,
     val user: String,

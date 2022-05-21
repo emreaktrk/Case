@@ -5,5 +5,7 @@ typealias Word = String
 data class WordModel(
     val id: String,
     val word: Word,
-    val definition: String,
+    val meaning: String,
+    val defination: String,
+    val example: String,
 )
