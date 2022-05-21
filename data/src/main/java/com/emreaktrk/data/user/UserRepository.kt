@@ -9,6 +9,8 @@ class UserRepository @Inject constructor(
 ) : IUserRepository {
 
     override suspend fun authentication(email: String, password: String): Token {
-        return remote.authentication(email, password)
+        return remote.authentication(email, password).also {
+            local.setHasAlreadyLoggedIn(true)
+        }
     }
 }

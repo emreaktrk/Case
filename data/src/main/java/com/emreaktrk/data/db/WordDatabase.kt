@@ -11,7 +11,6 @@ abstract class WordDatabase : RoomDatabase() {
     abstract fun wordDao(): WordDao
 
     companion object {
-
         private const val DB_NAME = "WORD"
 
         @Volatile
