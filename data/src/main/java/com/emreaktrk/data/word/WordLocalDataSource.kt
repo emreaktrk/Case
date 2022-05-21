@@ -34,4 +34,16 @@ class WordLocalDataSource @Inject constructor(
             )
         }
     }
+
+    fun random(): WordModel {
+        return dao.random().run {
+            WordModel(
+                this.id,
+                this.word,
+                this.defination,
+                this.meaning,
+                this.example
+            )
+        }
+    }
 }

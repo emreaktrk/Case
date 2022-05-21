@@ -7,7 +7,8 @@ import kotlinx.coroutines.flow.flow
 import javax.inject.Inject
 
 class WordRepository @Inject constructor(
-    private val remote: WordRemoteDataSource, private val local: WordLocalDataSource
+    private val remote: WordRemoteDataSource,
+    private val local: WordLocalDataSource
 ) : IWordRepository {
 
     override suspend fun shuffle(token: Token): List<WordModel> {
