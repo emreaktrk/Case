@@ -1,13 +1,13 @@
 package com.emreaktrk.data.user
 
+import com.emreaktrk.core.model.Token
 import com.emreaktrk.data.IDataSource
 import com.emreaktrk.data.api.ApiClient
 import com.emreaktrk.data.api.poko.request.UserAuthenticationRequest
-import com.emreaktrk.data.model.Token
 import javax.inject.Inject
 
 class UserRemoteDataSource @Inject constructor(
-    val api: ApiClient,
+    private val api: ApiClient,
 ) : IDataSource {
     suspend fun authentication(email: String, password: String): Token {
         val request = UserAuthenticationRequest(email, password)

@@ -1,4 +1,4 @@
-package com.emreaktrk.core.di
+package com.emreaktrk.core
 
 import com.google.gson.Gson
 import dagger.Module

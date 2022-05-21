@@ -1,25 +1,25 @@
-package com.emreaktrk.sahibinden.feature.login
+package com.emreaktrk.sahibinden.feature.words
 
 import android.os.Bundle
 import android.view.View
-import androidx.navigation.fragment.findNavController
+import com.emreaktrk.core.model.WordModel
 import com.emreaktrk.presentation.BaseFragment
 import com.emreaktrk.presentation.BindingSupport
 import com.emreaktrk.presentation.ViewModelSupport
 import com.emreaktrk.sahibinden.R
-import com.emreaktrk.sahibinden.databinding.FragmentLoginBinding
+import com.emreaktrk.sahibinden.databinding.FragmentWordBinding
 import com.google.android.material.snackbar.Snackbar
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 
 @AndroidEntryPoint
-class LoginFragment : BaseFragment<FragmentLoginBinding>(R.layout.fragment_login),
+class WordFragment : BaseFragment<FragmentWordBinding>(R.layout.fragment_word),
     BindingSupport,
     ViewModelSupport,
-    LoginViewModel.ActionHandler {
+    WordViewModel.ActionHandler {
 
     @Inject
-    lateinit var vm: LoginViewModel
+    lateinit var vm: WordViewModel
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -34,11 +34,9 @@ class LoginFragment : BaseFragment<FragmentLoginBinding>(R.layout.fragment_login
             .show()
     }
 
-    override fun onAuthenticated() {
+    override fun onLoad(list: List<WordModel>) {
         Snackbar
-            .make(requireView(), "Logged In", Snackbar.LENGTH_LONG)
+            .make(requireView(), "Words loaded.", Snackbar.LENGTH_LONG)
             .show()
-
-        findNavController().navigate(R.id.navigate_to_word)
     }
 }

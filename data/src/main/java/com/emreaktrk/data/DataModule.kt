@@ -1,6 +1,5 @@
-package com.emreaktrk.data.di
+package com.emreaktrk.data
 
-import com.emreaktrk.data.BuildConfig
 import com.emreaktrk.data.api.ApiClient
 import com.google.gson.Gson
 import dagger.Module
