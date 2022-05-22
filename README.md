@@ -10,7 +10,6 @@
 Clean arch ile multi-module uygulama yazdım Application module'de **single activity** olarak geliştirdim. Presentation katmanında **MVVM** kullandım. Jetpack Compose'u da kullanmak için bir widget geliştirdim. Olabildiğince Jetpack kütüphanelerini ve **SOLID** prensiblerini kullanmaya ve  özen gösterdim. **Offline First** örnekleri ekledim. Data katmanında **Repository Pattern** ve Domain katmanında **UseCase**'ler olarak %100 **Kotlin** ile geliştirildi.
 
 # Neler Kullandım?
-- 
 - Material3
 - Coroutine
 - Live Data
