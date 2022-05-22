@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>FragmentDetailBindingImpl.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=0;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">betaDebug</a> &gt; <a href="index.source.html" class="el_package">com.emreaktrk.sahibinden.databinding</a> &gt; <span class="el_source">FragmentDetailBindingImpl.java</span></div><h1>FragmentDetailBindingImpl.java</h1><pre class="source lang-java linenums">package com.emreaktrk.sahibinden.databinding;
+import com.emreaktrk.sahibinden.R;
+import com.emreaktrk.sahibinden.BR;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import android.view.View;
+@SuppressWarnings(&quot;unchecked&quot;)
+public class FragmentDetailBindingImpl extends FragmentDetailBinding  {
+
+    @Nullable
+    private static final androidx.databinding.ViewDataBinding.IncludedLayouts sIncludes;
+    @Nullable
+    private static final android.util.SparseIntArray sViewsWithIds;
+    static {
+<span class="fc" id="L15">        sIncludes = null;</span>
+<span class="fc" id="L16">        sViewsWithIds = null;</span>
+<span class="fc" id="L17">    }</span>
+    // views
+    @NonNull
+    private final androidx.constraintlayout.widget.ConstraintLayout mboundView0;
+    // variables
+    // values
+    // listeners
+    // Inverse Binding Event Handlers
+
+    public FragmentDetailBindingImpl(@Nullable androidx.databinding.DataBindingComponent bindingComponent, @NonNull View root) {
+<span class="fc" id="L27">        this(bindingComponent, root, mapBindings(bindingComponent, root, 2, sIncludes, sViewsWithIds));</span>
+<span class="fc" id="L28">    }</span>
+    private FragmentDetailBindingImpl(androidx.databinding.DataBindingComponent bindingComponent, View root, Object[] bindings) {
+<span class="fc" id="L30">        super(bindingComponent, root, 1</span>
+            , (com.emreaktrk.presentation.view.WordView) bindings[1]
+            );
+<span class="fc" id="L33">        this.detail.setTag(null);</span>
+<span class="fc" id="L34">        this.mboundView0 = (androidx.constraintlayout.widget.ConstraintLayout) bindings[0];</span>
+<span class="fc" id="L35">        this.mboundView0.setTag(null);</span>
+<span class="fc" id="L36">        setRootTag(root);</span>
+        // listeners
+<span class="fc" id="L38">        invalidateAll();</span>
+<span class="fc" id="L39">    }</span>
+
+    @Override
+    public void invalidateAll() {
+<span class="fc" id="L43">        synchronized(this) {</span>
+<span class="fc" id="L44">                mDirtyFlags = 0x4L;</span>
+<span class="fc" id="L45">        }</span>
+<span class="fc" id="L46">        requestRebind();</span>
+<span class="fc" id="L47">    }</span>
+
+    @Override
+    public boolean hasPendingBindings() {
+<span class="fc" id="L51">        synchronized(this) {</span>
+<span class="fc bfc" id="L52" title="All 2 branches covered.">            if (mDirtyFlags != 0) {</span>
+<span class="fc" id="L53">                return true;</span>
+            }
+<span class="fc" id="L55">        }</span>
+<span class="fc" id="L56">        return false;</span>
+    }
+
+    @Override
+    public boolean setVariable(int variableId, @Nullable Object variable)  {
+<span class="nc" id="L61">        boolean variableSet = true;</span>
+<span class="nc bnc" id="L62" title="All 2 branches missed.">        if (BR.vm == variableId) {</span>
+<span class="nc" id="L63">            setVm((com.emreaktrk.sahibinden.feature.detail.DetailViewModel) variable);</span>
+        }
+        else {
+<span class="nc" id="L66">            variableSet = false;</span>
+        }
+<span class="nc" id="L68">            return variableSet;</span>
+    }
+
+    public void setVm(@Nullable com.emreaktrk.sahibinden.feature.detail.DetailViewModel Vm) {
+<span class="fc" id="L72">        this.mVm = Vm;</span>
+<span class="fc" id="L73">        synchronized(this) {</span>
+<span class="fc" id="L74">            mDirtyFlags |= 0x2L;</span>
+<span class="fc" id="L75">        }</span>
+<span class="fc" id="L76">        notifyPropertyChanged(BR.vm);</span>
+<span class="fc" id="L77">        super.requestRebind();</span>
+<span class="fc" id="L78">    }</span>
+
+    @Override
+    protected boolean onFieldChange(int localFieldId, Object object, int fieldId) {
+<span class="pc bpc" id="L82" title="1 of 2 branches missed.">        switch (localFieldId) {</span>
+            case 0 :
+<span class="fc" id="L84">                return onChangeVmWord((androidx.lifecycle.MutableLiveData&lt;com.emreaktrk.core.model.WordModel&gt;) object, fieldId);</span>
+        }
+<span class="nc" id="L86">        return false;</span>
+    }
+    private boolean onChangeVmWord(androidx.lifecycle.MutableLiveData&lt;com.emreaktrk.core.model.WordModel&gt; VmWord, int fieldId) {
+<span class="pc bpc" id="L89" title="1 of 2 branches missed.">        if (fieldId == BR._all) {</span>
+<span class="fc" id="L90">            synchronized(this) {</span>
+<span class="fc" id="L91">                    mDirtyFlags |= 0x1L;</span>
+<span class="fc" id="L92">            }</span>
+<span class="fc" id="L93">            return true;</span>
+        }
+<span class="nc" id="L95">        return false;</span>
+    }
+
+    @Override
+    protected void executeBindings() {
+<span class="fc" id="L100">        long dirtyFlags = 0;</span>
+<span class="fc" id="L101">        synchronized(this) {</span>
+<span class="fc" id="L102">            dirtyFlags = mDirtyFlags;</span>
+<span class="fc" id="L103">            mDirtyFlags = 0;</span>
+<span class="fc" id="L104">        }</span>
+<span class="fc" id="L105">        com.emreaktrk.sahibinden.feature.detail.DetailViewModel vm = mVm;</span>
+<span class="fc" id="L106">        androidx.lifecycle.MutableLiveData&lt;com.emreaktrk.core.model.WordModel&gt; vmWord = null;</span>
+<span class="fc" id="L107">        com.emreaktrk.core.model.WordModel vmWordGetValue = null;</span>
+
+<span class="pc bpc" id="L109" title="1 of 2 branches missed.">        if ((dirtyFlags &amp; 0x7L) != 0) {</span>
+
+
+
+<span class="pc bpc" id="L113" title="1 of 2 branches missed.">                if (vm != null) {</span>
+                    // read vm.word
+<span class="fc" id="L115">                    vmWord = vm.getWord();</span>
+                }
+<span class="fc" id="L117">                updateLiveDataRegistration(0, vmWord);</span>
+
+
+<span class="pc bpc" id="L120" title="1 of 2 branches missed.">                if (vmWord != null) {</span>
+                    // read vm.word.getValue()
+<span class="fc" id="L122">                    vmWordGetValue = vmWord.getValue();</span>
+                }
+        }
+        // batch finished
+<span class="pc bpc" id="L126" title="1 of 2 branches missed.">        if ((dirtyFlags &amp; 0x7L) != 0) {</span>
+            // api target 1
+
+<span class="fc" id="L129">            com.emreaktrk.presentation.view.WordView.bindModel(this.detail, vmWordGetValue);</span>
+        }
+<span class="fc" id="L131">    }</span>
+    // Listener Stub Implementations
+    // callback impls
+    // dirty flag
+<span class="fc" id="L135">    private  long mDirtyFlags = 0xffffffffffffffffL;</span>
+    /* flag mapping
+        flag 0 (0x1L): vm.word
+        flag 1 (0x2L): vm
+        flag 2 (0x3L): null
+    flag mapping end*/
+    //end
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span>Generated by the Android Gradle plugin 7.4.0-alpha02</div></body></html>

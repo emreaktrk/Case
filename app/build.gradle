@@ -23,6 +23,9 @@ android {
     }
 
     buildTypes {
+        debug {
+            testCoverageEnabled true
+        }
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
@@ -38,14 +41,13 @@ android {
     buildFeatures {
         viewBinding true
         dataBinding true
-        compose true
     }
     flavorDimensions 'env'
     productFlavors {
         beta {
             dimension = 'env'
 
-            // Disabled due to compile error caused by safe-args.
+            //Disabled due to compile error caused by safe-args.
             //applicationIdSuffix = '.beta'
         }
         prod {
@@ -62,15 +64,16 @@ dependencies {
     implementation "androidx.navigation:navigation-ui-ktx:$navigation"
 
     implementation 'com.google.dagger:hilt-android:2.42'
+    androidTestImplementation 'androidx.test.espresso:espresso-contrib:3.5.0-alpha06'
     kapt 'com.google.dagger:hilt-android-compiler:2.42'
 
-    implementation project(':widget')
+    //implementation project(':widget')
     implementation project(':presentation')
     implementation project(':domain')
     implementation project(':data')
     implementation project(':core')
 
     testImplementation 'junit:junit:4.13.2'
-    androidTestImplementation 'androidx.test.ext:junit:1.1.3'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.4-alpha06'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.0-alpha06'
 }

@@ -1,0 +1,298 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>FragmentLoginBindingImpl.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=0;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">betaDebug</a> &gt; <a href="index.source.html" class="el_package">com.emreaktrk.sahibinden.databinding</a> &gt; <span class="el_source">FragmentLoginBindingImpl.java</span></div><h1>FragmentLoginBindingImpl.java</h1><pre class="source lang-java linenums">package com.emreaktrk.sahibinden.databinding;
+import com.emreaktrk.sahibinden.R;
+import com.emreaktrk.sahibinden.BR;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import android.view.View;
+@SuppressWarnings(&quot;unchecked&quot;)
+public class FragmentLoginBindingImpl extends FragmentLoginBinding implements com.emreaktrk.sahibinden.generated.callback.OnClickListener.Listener {
+
+    @Nullable
+    private static final androidx.databinding.ViewDataBinding.IncludedLayouts sIncludes;
+    @Nullable
+    private static final android.util.SparseIntArray sViewsWithIds;
+    static {
+<span class="fc" id="L15">        sIncludes = null;</span>
+<span class="fc" id="L16">        sViewsWithIds = new android.util.SparseIntArray();</span>
+<span class="fc" id="L17">        sViewsWithIds.put(R.id.headline, 4);</span>
+<span class="fc" id="L18">        sViewsWithIds.put(R.id.description, 5);</span>
+<span class="fc" id="L19">        sViewsWithIds.put(R.id.email, 6);</span>
+<span class="fc" id="L20">        sViewsWithIds.put(R.id.password, 7);</span>
+<span class="fc" id="L21">        sViewsWithIds.put(R.id.caption, 8);</span>
+<span class="fc" id="L22">        sViewsWithIds.put(R.id.terms_and_conditions, 9);</span>
+<span class="fc" id="L23">    }</span>
+    // views
+    @NonNull
+    private final androidx.constraintlayout.widget.ConstraintLayout mboundView0;
+    @NonNull
+    private final com.google.android.material.textfield.TextInputEditText mboundView1;
+    @NonNull
+    private final com.google.android.material.textfield.TextInputEditText mboundView2;
+    // variables
+    @Nullable
+    private final android.view.View.OnClickListener mCallback1;
+    // values
+    // listeners
+    // Inverse Binding Event Handlers
+<span class="fc" id="L37">    private androidx.databinding.InverseBindingListener mboundView1androidTextAttrChanged = new androidx.databinding.InverseBindingListener() {</span>
+        @Override
+        public void onChange() {
+            // Inverse of vm.email.getValue()
+            //         is vm.email.setValue((java.lang.String) callbackArg_0)
+<span class="fc" id="L42">            java.lang.String callbackArg_0 = androidx.databinding.adapters.TextViewBindingAdapter.getTextString(mboundView1);</span>
+            // localize variables for thread safety
+            // vm != null
+<span class="fc" id="L45">            boolean vmJavaLangObjectNull = false;</span>
+            // vm
+<span class="fc" id="L47">            com.emreaktrk.sahibinden.feature.login.LoginViewModel vm = mVm;</span>
+            // vm.email.getValue()
+<span class="fc" id="L49">            java.lang.String vmEmailGetValue = null;</span>
+            // vm.email != null
+<span class="fc" id="L51">            boolean vmEmailJavaLangObjectNull = false;</span>
+            // vm.email
+<span class="fc" id="L53">            androidx.lifecycle.MutableLiveData&lt;java.lang.String&gt; vmEmail = null;</span>
+
+
+
+<span class="pc bpc" id="L57" title="1 of 2 branches missed.">            vmJavaLangObjectNull = (vm) != (null);</span>
+<span class="pc bpc" id="L58" title="1 of 2 branches missed.">            if (vmJavaLangObjectNull) {</span>
+
+
+<span class="fc" id="L61">                vmEmail = vm.getEmail();</span>
+
+<span class="pc bpc" id="L63" title="1 of 2 branches missed.">                vmEmailJavaLangObjectNull = (vmEmail) != (null);</span>
+<span class="pc bpc" id="L64" title="1 of 2 branches missed.">                if (vmEmailJavaLangObjectNull) {</span>
+
+
+
+
+<span class="fc" id="L69">                    vmEmail.setValue(((java.lang.String) (callbackArg_0)));</span>
+                }
+            }
+<span class="fc" id="L72">        }</span>
+    };
+<span class="fc" id="L74">    private androidx.databinding.InverseBindingListener mboundView2androidTextAttrChanged = new androidx.databinding.InverseBindingListener() {</span>
+        @Override
+        public void onChange() {
+            // Inverse of vm.password.getValue()
+            //         is vm.password.setValue((java.lang.String) callbackArg_0)
+<span class="fc" id="L79">            java.lang.String callbackArg_0 = androidx.databinding.adapters.TextViewBindingAdapter.getTextString(mboundView2);</span>
+            // localize variables for thread safety
+            // vm.password.getValue()
+<span class="fc" id="L82">            java.lang.String vmPasswordGetValue = null;</span>
+            // vm != null
+<span class="fc" id="L84">            boolean vmJavaLangObjectNull = false;</span>
+            // vm
+<span class="fc" id="L86">            com.emreaktrk.sahibinden.feature.login.LoginViewModel vm = mVm;</span>
+            // vm.password != null
+<span class="fc" id="L88">            boolean vmPasswordJavaLangObjectNull = false;</span>
+            // vm.password
+<span class="fc" id="L90">            androidx.lifecycle.MutableLiveData&lt;java.lang.String&gt; vmPassword = null;</span>
+
+
+
+<span class="pc bpc" id="L94" title="1 of 2 branches missed.">            vmJavaLangObjectNull = (vm) != (null);</span>
+<span class="pc bpc" id="L95" title="1 of 2 branches missed.">            if (vmJavaLangObjectNull) {</span>
+
+
+<span class="fc" id="L98">                vmPassword = vm.getPassword();</span>
+
+<span class="pc bpc" id="L100" title="1 of 2 branches missed.">                vmPasswordJavaLangObjectNull = (vmPassword) != (null);</span>
+<span class="pc bpc" id="L101" title="1 of 2 branches missed.">                if (vmPasswordJavaLangObjectNull) {</span>
+
+
+
+
+<span class="fc" id="L106">                    vmPassword.setValue(((java.lang.String) (callbackArg_0)));</span>
+                }
+            }
+<span class="fc" id="L109">        }</span>
+    };
+
+    public FragmentLoginBindingImpl(@Nullable androidx.databinding.DataBindingComponent bindingComponent, @NonNull View root) {
+<span class="fc" id="L113">        this(bindingComponent, root, mapBindings(bindingComponent, root, 10, sIncludes, sViewsWithIds));</span>
+<span class="fc" id="L114">    }</span>
+    private FragmentLoginBindingImpl(androidx.databinding.DataBindingComponent bindingComponent, View root, Object[] bindings) {
+<span class="fc" id="L116">        super(bindingComponent, root, 2</span>
+            , (com.google.android.material.textview.MaterialTextView) bindings[8]
+            , (com.google.android.material.textview.MaterialTextView) bindings[5]
+            , (com.google.android.material.textfield.TextInputLayout) bindings[6]
+            , (com.google.android.material.button.MaterialButton) bindings[3]
+            , (com.google.android.material.textview.MaterialTextView) bindings[4]
+            , (com.google.android.material.textfield.TextInputLayout) bindings[7]
+            , (com.google.android.material.button.MaterialButton) bindings[9]
+            );
+<span class="fc" id="L125">        this.getStarted.setTag(null);</span>
+<span class="fc" id="L126">        this.mboundView0 = (androidx.constraintlayout.widget.ConstraintLayout) bindings[0];</span>
+<span class="fc" id="L127">        this.mboundView0.setTag(null);</span>
+<span class="fc" id="L128">        this.mboundView1 = (com.google.android.material.textfield.TextInputEditText) bindings[1];</span>
+<span class="fc" id="L129">        this.mboundView1.setTag(null);</span>
+<span class="fc" id="L130">        this.mboundView2 = (com.google.android.material.textfield.TextInputEditText) bindings[2];</span>
+<span class="fc" id="L131">        this.mboundView2.setTag(null);</span>
+<span class="fc" id="L132">        setRootTag(root);</span>
+        // listeners
+<span class="fc" id="L134">        mCallback1 = new com.emreaktrk.sahibinden.generated.callback.OnClickListener(this, 1);</span>
+<span class="fc" id="L135">        invalidateAll();</span>
+<span class="fc" id="L136">    }</span>
+
+    @Override
+    public void invalidateAll() {
+<span class="fc" id="L140">        synchronized(this) {</span>
+<span class="fc" id="L141">                mDirtyFlags = 0x8L;</span>
+<span class="fc" id="L142">        }</span>
+<span class="fc" id="L143">        requestRebind();</span>
+<span class="fc" id="L144">    }</span>
+
+    @Override
+    public boolean hasPendingBindings() {
+<span class="fc" id="L148">        synchronized(this) {</span>
+<span class="pc bpc" id="L149" title="1 of 2 branches missed.">            if (mDirtyFlags != 0) {</span>
+<span class="fc" id="L150">                return true;</span>
+            }
+<span class="nc" id="L152">        }</span>
+<span class="nc" id="L153">        return false;</span>
+    }
+
+    @Override
+    public boolean setVariable(int variableId, @Nullable Object variable)  {
+<span class="nc" id="L158">        boolean variableSet = true;</span>
+<span class="nc bnc" id="L159" title="All 2 branches missed.">        if (BR.vm == variableId) {</span>
+<span class="nc" id="L160">            setVm((com.emreaktrk.sahibinden.feature.login.LoginViewModel) variable);</span>
+        }
+        else {
+<span class="nc" id="L163">            variableSet = false;</span>
+        }
+<span class="nc" id="L165">            return variableSet;</span>
+    }
+
+    public void setVm(@Nullable com.emreaktrk.sahibinden.feature.login.LoginViewModel Vm) {
+<span class="fc" id="L169">        this.mVm = Vm;</span>
+<span class="fc" id="L170">        synchronized(this) {</span>
+<span class="fc" id="L171">            mDirtyFlags |= 0x4L;</span>
+<span class="fc" id="L172">        }</span>
+<span class="fc" id="L173">        notifyPropertyChanged(BR.vm);</span>
+<span class="fc" id="L174">        super.requestRebind();</span>
+<span class="fc" id="L175">    }</span>
+
+    @Override
+    protected boolean onFieldChange(int localFieldId, Object object, int fieldId) {
+<span class="pc bpc" id="L179" title="1 of 3 branches missed.">        switch (localFieldId) {</span>
+            case 0 :
+<span class="fc" id="L181">                return onChangeVmPassword((androidx.lifecycle.MutableLiveData&lt;java.lang.String&gt;) object, fieldId);</span>
+            case 1 :
+<span class="fc" id="L183">                return onChangeVmEmail((androidx.lifecycle.MutableLiveData&lt;java.lang.String&gt;) object, fieldId);</span>
+        }
+<span class="nc" id="L185">        return false;</span>
+    }
+    private boolean onChangeVmPassword(androidx.lifecycle.MutableLiveData&lt;java.lang.String&gt; VmPassword, int fieldId) {
+<span class="pc bpc" id="L188" title="1 of 2 branches missed.">        if (fieldId == BR._all) {</span>
+<span class="fc" id="L189">            synchronized(this) {</span>
+<span class="fc" id="L190">                    mDirtyFlags |= 0x1L;</span>
+<span class="fc" id="L191">            }</span>
+<span class="fc" id="L192">            return true;</span>
+        }
+<span class="nc" id="L194">        return false;</span>
+    }
+    private boolean onChangeVmEmail(androidx.lifecycle.MutableLiveData&lt;java.lang.String&gt; VmEmail, int fieldId) {
+<span class="pc bpc" id="L197" title="1 of 2 branches missed.">        if (fieldId == BR._all) {</span>
+<span class="fc" id="L198">            synchronized(this) {</span>
+<span class="fc" id="L199">                    mDirtyFlags |= 0x2L;</span>
+<span class="fc" id="L200">            }</span>
+<span class="fc" id="L201">            return true;</span>
+        }
+<span class="nc" id="L203">        return false;</span>
+    }
+
+    @Override
+    protected void executeBindings() {
+<span class="fc" id="L208">        long dirtyFlags = 0;</span>
+<span class="fc" id="L209">        synchronized(this) {</span>
+<span class="fc" id="L210">            dirtyFlags = mDirtyFlags;</span>
+<span class="fc" id="L211">            mDirtyFlags = 0;</span>
+<span class="fc" id="L212">        }</span>
+<span class="fc" id="L213">        java.lang.String vmPasswordGetValue = null;</span>
+<span class="fc" id="L214">        java.lang.String vmEmailGetValue = null;</span>
+<span class="fc" id="L215">        com.emreaktrk.sahibinden.feature.login.LoginViewModel vm = mVm;</span>
+<span class="fc" id="L216">        androidx.lifecycle.MutableLiveData&lt;java.lang.String&gt; vmPassword = null;</span>
+<span class="fc" id="L217">        androidx.lifecycle.MutableLiveData&lt;java.lang.String&gt; vmEmail = null;</span>
+
+<span class="pc bpc" id="L219" title="1 of 2 branches missed.">        if ((dirtyFlags &amp; 0xfL) != 0) {</span>
+
+
+<span class="pc bpc" id="L222" title="1 of 2 branches missed.">            if ((dirtyFlags &amp; 0xdL) != 0) {</span>
+
+<span class="pc bpc" id="L224" title="1 of 2 branches missed.">                    if (vm != null) {</span>
+                        // read vm.password
+<span class="fc" id="L226">                        vmPassword = vm.getPassword();</span>
+                    }
+<span class="fc" id="L228">                    updateLiveDataRegistration(0, vmPassword);</span>
+
+
+<span class="pc bpc" id="L231" title="1 of 2 branches missed.">                    if (vmPassword != null) {</span>
+                        // read vm.password.getValue()
+<span class="fc" id="L233">                        vmPasswordGetValue = vmPassword.getValue();</span>
+                    }
+            }
+<span class="pc bpc" id="L236" title="1 of 2 branches missed.">            if ((dirtyFlags &amp; 0xeL) != 0) {</span>
+
+<span class="pc bpc" id="L238" title="1 of 2 branches missed.">                    if (vm != null) {</span>
+                        // read vm.email
+<span class="fc" id="L240">                        vmEmail = vm.getEmail();</span>
+                    }
+<span class="fc" id="L242">                    updateLiveDataRegistration(1, vmEmail);</span>
+
+
+<span class="pc bpc" id="L245" title="1 of 2 branches missed.">                    if (vmEmail != null) {</span>
+                        // read vm.email.getValue()
+<span class="fc" id="L247">                        vmEmailGetValue = vmEmail.getValue();</span>
+                    }
+            }
+        }
+        // batch finished
+<span class="fc bfc" id="L252" title="All 2 branches covered.">        if ((dirtyFlags &amp; 0x8L) != 0) {</span>
+            // api target 1
+
+<span class="fc" id="L255">            this.getStarted.setOnClickListener(mCallback1);</span>
+<span class="fc" id="L256">            androidx.databinding.adapters.TextViewBindingAdapter.setTextWatcher(this.mboundView1, (androidx.databinding.adapters.TextViewBindingAdapter.BeforeTextChanged)null, (androidx.databinding.adapters.TextViewBindingAdapter.OnTextChanged)null, (androidx.databinding.adapters.TextViewBindingAdapter.AfterTextChanged)null, mboundView1androidTextAttrChanged);</span>
+<span class="fc" id="L257">            androidx.databinding.adapters.TextViewBindingAdapter.setTextWatcher(this.mboundView2, (androidx.databinding.adapters.TextViewBindingAdapter.BeforeTextChanged)null, (androidx.databinding.adapters.TextViewBindingAdapter.OnTextChanged)null, (androidx.databinding.adapters.TextViewBindingAdapter.AfterTextChanged)null, mboundView2androidTextAttrChanged);</span>
+        }
+<span class="pc bpc" id="L259" title="1 of 2 branches missed.">        if ((dirtyFlags &amp; 0xeL) != 0) {</span>
+            // api target 1
+
+<span class="fc" id="L262">            androidx.databinding.adapters.TextViewBindingAdapter.setText(this.mboundView1, vmEmailGetValue);</span>
+        }
+<span class="pc bpc" id="L264" title="1 of 2 branches missed.">        if ((dirtyFlags &amp; 0xdL) != 0) {</span>
+            // api target 1
+
+<span class="fc" id="L267">            androidx.databinding.adapters.TextViewBindingAdapter.setText(this.mboundView2, vmPasswordGetValue);</span>
+        }
+<span class="fc" id="L269">    }</span>
+    // Listener Stub Implementations
+    // callback impls
+    public final void _internalCallbackOnClick(int sourceId , android.view.View callbackArg_0) {
+        // localize variables for thread safety
+        // vm != null
+<span class="fc" id="L275">        boolean vmJavaLangObjectNull = false;</span>
+        // vm
+<span class="fc" id="L277">        com.emreaktrk.sahibinden.feature.login.LoginViewModel vm = mVm;</span>
+
+
+
+<span class="pc bpc" id="L281" title="1 of 2 branches missed.">        vmJavaLangObjectNull = (vm) != (null);</span>
+<span class="pc bpc" id="L282" title="1 of 2 branches missed.">        if (vmJavaLangObjectNull) {</span>
+
+
+<span class="fc" id="L285">            vm.authenticate();</span>
+        }
+<span class="fc" id="L287">    }</span>
+    // dirty flag
+<span class="fc" id="L289">    private  long mDirtyFlags = 0xffffffffffffffffL;</span>
+    /* flag mapping
+        flag 0 (0x1L): vm.password
+        flag 1 (0x2L): vm.email
+        flag 2 (0x3L): vm
+        flag 3 (0x4L): null
+    flag mapping end*/
+    //end
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span>Generated by the Android Gradle plugin 7.4.0-alpha02</div></body></html>

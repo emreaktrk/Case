@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>DetailFragmentArgs.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=0;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">betaDebug</a> &gt; <a href="index.source.html" class="el_package">com.emreaktrk.sahibinden.feature.detail</a> &gt; <span class="el_source">DetailFragmentArgs.java</span></div><h1>DetailFragmentArgs.java</h1><pre class="source lang-java linenums">package com.emreaktrk.sahibinden.feature.detail;
+
+import android.os.Bundle;
+import androidx.annotation.NonNull;
+import androidx.lifecycle.SavedStateHandle;
+import androidx.navigation.NavArgs;
+import java.lang.IllegalArgumentException;
+import java.lang.Object;
+import java.lang.Override;
+import java.lang.String;
+import java.lang.SuppressWarnings;
+import java.util.HashMap;
+
+public class DetailFragmentArgs implements NavArgs {
+<span class="pc" id="L15">  private final HashMap arguments = new HashMap();</span>
+
+<span class="fc" id="L17">  private DetailFragmentArgs() {</span>
+<span class="fc" id="L18">  }</span>
+
+  @SuppressWarnings(&quot;unchecked&quot;)
+<span class="nc" id="L21">  private DetailFragmentArgs(HashMap argumentsMap) {</span>
+<span class="nc" id="L22">    this.arguments.putAll(argumentsMap);</span>
+<span class="nc" id="L23">  }</span>
+
+  @NonNull
+  @SuppressWarnings(&quot;unchecked&quot;)
+  public static DetailFragmentArgs fromBundle(@NonNull Bundle bundle) {
+<span class="fc" id="L28">    DetailFragmentArgs __result = new DetailFragmentArgs();</span>
+<span class="fc" id="L29">    bundle.setClassLoader(DetailFragmentArgs.class.getClassLoader());</span>
+<span class="pc bpc" id="L30" title="1 of 2 branches missed.">    if (bundle.containsKey(&quot;id&quot;)) {</span>
+      String id;
+<span class="fc" id="L32">      id = bundle.getString(&quot;id&quot;);</span>
+<span class="pc bpc" id="L33" title="1 of 2 branches missed.">      if (id == null) {</span>
+<span class="nc" id="L34">        throw new IllegalArgumentException(&quot;Argument \&quot;id\&quot; is marked as non-null but was passed a null value.&quot;);</span>
+      }
+<span class="fc" id="L36">      __result.arguments.put(&quot;id&quot;, id);</span>
+<span class="fc" id="L37">    } else {</span>
+<span class="nc" id="L38">      throw new IllegalArgumentException(&quot;Required argument \&quot;id\&quot; is missing and does not have an android:defaultValue&quot;);</span>
+    }
+<span class="fc" id="L40">    return __result;</span>
+  }
+
+  @NonNull
+  @SuppressWarnings(&quot;unchecked&quot;)
+  public static DetailFragmentArgs fromSavedStateHandle(
+      @NonNull SavedStateHandle savedStateHandle) {
+<span class="nc" id="L47">    DetailFragmentArgs __result = new DetailFragmentArgs();</span>
+<span class="nc bnc" id="L48" title="All 2 branches missed.">    if (savedStateHandle.contains(&quot;id&quot;)) {</span>
+      String id;
+<span class="nc" id="L50">      id = savedStateHandle.get(&quot;id&quot;);</span>
+<span class="nc bnc" id="L51" title="All 2 branches missed.">      if (id == null) {</span>
+<span class="nc" id="L52">        throw new IllegalArgumentException(&quot;Argument \&quot;id\&quot; is marked as non-null but was passed a null value.&quot;);</span>
+      }
+<span class="nc" id="L54">      __result.arguments.put(&quot;id&quot;, id);</span>
+<span class="nc" id="L55">    } else {</span>
+<span class="nc" id="L56">      throw new IllegalArgumentException(&quot;Required argument \&quot;id\&quot; is missing and does not have an android:defaultValue&quot;);</span>
+    }
+<span class="nc" id="L58">    return __result;</span>
+  }
+
+  @SuppressWarnings(&quot;unchecked&quot;)
+  @NonNull
+  public String getId() {
+<span class="fc" id="L64">    return (String) arguments.get(&quot;id&quot;);</span>
+  }
+
+  @SuppressWarnings(&quot;unchecked&quot;)
+  @NonNull
+  public Bundle toBundle() {
+<span class="nc" id="L70">    Bundle __result = new Bundle();</span>
+<span class="nc bnc" id="L71" title="All 2 branches missed.">    if (arguments.containsKey(&quot;id&quot;)) {</span>
+<span class="nc" id="L72">      String id = (String) arguments.get(&quot;id&quot;);</span>
+<span class="nc" id="L73">      __result.putString(&quot;id&quot;, id);</span>
+    }
+<span class="nc" id="L75">    return __result;</span>
+  }
+
+  @SuppressWarnings(&quot;unchecked&quot;)
+  @NonNull
+  public SavedStateHandle toSavedStateHandle() {
+<span class="nc" id="L81">    SavedStateHandle __result = new SavedStateHandle();</span>
+<span class="nc bnc" id="L82" title="All 2 branches missed.">    if (arguments.containsKey(&quot;id&quot;)) {</span>
+<span class="nc" id="L83">      String id = (String) arguments.get(&quot;id&quot;);</span>
+<span class="nc" id="L84">      __result.set(&quot;id&quot;, id);</span>
+    }
+<span class="nc" id="L86">    return __result;</span>
+  }
+
+  @Override
+  public boolean equals(Object object) {
+<span class="nc bnc" id="L91" title="All 2 branches missed.">    if (this == object) {</span>
+<span class="nc" id="L92">        return true;</span>
+    }
+<span class="nc bnc" id="L94" title="All 4 branches missed.">    if (object == null || getClass() != object.getClass()) {</span>
+<span class="nc" id="L95">        return false;</span>
+    }
+<span class="nc" id="L97">    DetailFragmentArgs that = (DetailFragmentArgs) object;</span>
+<span class="nc bnc" id="L98" title="All 2 branches missed.">    if (arguments.containsKey(&quot;id&quot;) != that.arguments.containsKey(&quot;id&quot;)) {</span>
+<span class="nc" id="L99">      return false;</span>
+    }
+<span class="nc bnc" id="L101" title="All 6 branches missed.">    if (getId() != null ? !getId().equals(that.getId()) : that.getId() != null) {</span>
+<span class="nc" id="L102">      return false;</span>
+    }
+<span class="nc" id="L104">    return true;</span>
+  }
+
+  @Override
+  public int hashCode() {
+<span class="nc" id="L109">    int result = 1;</span>
+<span class="nc bnc" id="L110" title="All 2 branches missed.">    result = 31 * result + (getId() != null ? getId().hashCode() : 0);</span>
+<span class="nc" id="L111">    return result;</span>
+  }
+
+  @Override
+  public String toString() {
+<span class="nc" id="L116">    return &quot;DetailFragmentArgs{&quot;</span>
+<span class="nc" id="L117">        + &quot;id=&quot; + getId()</span>
+        + &quot;}&quot;;
+  }
+
+  public static final class Builder {
+<span class="nc" id="L122">    private final HashMap arguments = new HashMap();</span>
+
+    @SuppressWarnings(&quot;unchecked&quot;)
+<span class="nc" id="L125">    public Builder(@NonNull DetailFragmentArgs original) {</span>
+<span class="nc" id="L126">      this.arguments.putAll(original.arguments);</span>
+<span class="nc" id="L127">    }</span>
+
+    @SuppressWarnings(&quot;unchecked&quot;)
+<span class="nc" id="L130">    public Builder(@NonNull String id) {</span>
+<span class="nc bnc" id="L131" title="All 2 branches missed.">      if (id == null) {</span>
+<span class="nc" id="L132">        throw new IllegalArgumentException(&quot;Argument \&quot;id\&quot; is marked as non-null but was passed a null value.&quot;);</span>
+      }
+<span class="nc" id="L134">      this.arguments.put(&quot;id&quot;, id);</span>
+<span class="nc" id="L135">    }</span>
+
+    @NonNull
+    public DetailFragmentArgs build() {
+<span class="nc" id="L139">      DetailFragmentArgs result = new DetailFragmentArgs(arguments);</span>
+<span class="nc" id="L140">      return result;</span>
+    }
+
+    @NonNull
+    @SuppressWarnings(&quot;unchecked&quot;)
+    public Builder setId(@NonNull String id) {
+<span class="nc bnc" id="L146" title="All 2 branches missed.">      if (id == null) {</span>
+<span class="nc" id="L147">        throw new IllegalArgumentException(&quot;Argument \&quot;id\&quot; is marked as non-null but was passed a null value.&quot;);</span>
+      }
+<span class="nc" id="L149">      this.arguments.put(&quot;id&quot;, id);</span>
+<span class="nc" id="L150">      return this;</span>
+    }
+
+    @SuppressWarnings({&quot;unchecked&quot;,&quot;GetterOnBuilder&quot;})
+    @NonNull
+    public String getId() {
+<span class="nc" id="L156">      return (String) arguments.get(&quot;id&quot;);</span>
+    }
+  }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span>Generated by the Android Gradle plugin 7.4.0-alpha02</div></body></html>

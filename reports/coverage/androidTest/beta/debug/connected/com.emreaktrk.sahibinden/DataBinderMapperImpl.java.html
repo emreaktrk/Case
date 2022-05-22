@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>DataBinderMapperImpl.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=0;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">betaDebug</a> &gt; <a href="index.source.html" class="el_package">com.emreaktrk.sahibinden</a> &gt; <span class="el_source">DataBinderMapperImpl.java</span></div><h1>DataBinderMapperImpl.java</h1><pre class="source lang-java linenums">package com.emreaktrk.sahibinden;
+
+import android.util.SparseArray;
+import android.util.SparseIntArray;
+import android.view.View;
+import androidx.databinding.DataBinderMapper;
+import androidx.databinding.DataBindingComponent;
+import androidx.databinding.ViewDataBinding;
+import com.emreaktrk.sahibinden.databinding.ActivityMainBindingImpl;
+import com.emreaktrk.sahibinden.databinding.FragmentDetailBindingImpl;
+import com.emreaktrk.sahibinden.databinding.FragmentLoginBindingImpl;
+import com.emreaktrk.sahibinden.databinding.FragmentWordBindingImpl;
+import com.emreaktrk.sahibinden.databinding.ItemWordBindingImpl;
+import java.lang.IllegalArgumentException;
+import java.lang.Integer;
+import java.lang.Object;
+import java.lang.Override;
+import java.lang.RuntimeException;
+import java.lang.String;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+
+<span class="fc" id="L24">public class DataBinderMapperImpl extends DataBinderMapper {</span>
+  private static final int LAYOUT_ACTIVITYMAIN = 1;
+
+  private static final int LAYOUT_FRAGMENTDETAIL = 2;
+
+  private static final int LAYOUT_FRAGMENTLOGIN = 3;
+
+  private static final int LAYOUT_FRAGMENTWORD = 4;
+
+  private static final int LAYOUT_ITEMWORD = 5;
+
+<span class="fc" id="L35">  private static final SparseIntArray INTERNAL_LAYOUT_ID_LOOKUP = new SparseIntArray(5);</span>
+
+  static {
+<span class="fc" id="L38">    INTERNAL_LAYOUT_ID_LOOKUP.put(com.emreaktrk.sahibinden.R.layout.activity_main, LAYOUT_ACTIVITYMAIN);</span>
+<span class="fc" id="L39">    INTERNAL_LAYOUT_ID_LOOKUP.put(com.emreaktrk.sahibinden.R.layout.fragment_detail, LAYOUT_FRAGMENTDETAIL);</span>
+<span class="fc" id="L40">    INTERNAL_LAYOUT_ID_LOOKUP.put(com.emreaktrk.sahibinden.R.layout.fragment_login, LAYOUT_FRAGMENTLOGIN);</span>
+<span class="fc" id="L41">    INTERNAL_LAYOUT_ID_LOOKUP.put(com.emreaktrk.sahibinden.R.layout.fragment_word, LAYOUT_FRAGMENTWORD);</span>
+<span class="fc" id="L42">    INTERNAL_LAYOUT_ID_LOOKUP.put(com.emreaktrk.sahibinden.R.layout.item_word, LAYOUT_ITEMWORD);</span>
+<span class="fc" id="L43">  }</span>
+
+  @Override
+  public ViewDataBinding getDataBinder(DataBindingComponent component, View view, int layoutId) {
+<span class="fc" id="L47">    int localizedLayoutId = INTERNAL_LAYOUT_ID_LOOKUP.get(layoutId);</span>
+<span class="pc bpc" id="L48" title="1 of 2 branches missed.">    if(localizedLayoutId &gt; 0) {</span>
+<span class="fc" id="L49">      final Object tag = view.getTag();</span>
+<span class="pc bpc" id="L50" title="1 of 2 branches missed.">      if(tag == null) {</span>
+<span class="nc" id="L51">        throw new RuntimeException(&quot;view must have a tag&quot;);</span>
+      }
+<span class="pc bpc" id="L53" title="1 of 6 branches missed.">      switch(localizedLayoutId) {</span>
+        case  LAYOUT_ACTIVITYMAIN: {
+<span class="pc bpc" id="L55" title="1 of 2 branches missed.">          if (&quot;layout/activity_main_0&quot;.equals(tag)) {</span>
+<span class="fc" id="L56">            return new ActivityMainBindingImpl(component, view);</span>
+          }
+<span class="nc" id="L58">          throw new IllegalArgumentException(&quot;The tag for activity_main is invalid. Received: &quot; + tag);</span>
+        }
+        case  LAYOUT_FRAGMENTDETAIL: {
+<span class="pc bpc" id="L61" title="1 of 2 branches missed.">          if (&quot;layout/fragment_detail_0&quot;.equals(tag)) {</span>
+<span class="fc" id="L62">            return new FragmentDetailBindingImpl(component, view);</span>
+          }
+<span class="nc" id="L64">          throw new IllegalArgumentException(&quot;The tag for fragment_detail is invalid. Received: &quot; + tag);</span>
+        }
+        case  LAYOUT_FRAGMENTLOGIN: {
+<span class="pc bpc" id="L67" title="1 of 2 branches missed.">          if (&quot;layout/fragment_login_0&quot;.equals(tag)) {</span>
+<span class="fc" id="L68">            return new FragmentLoginBindingImpl(component, view);</span>
+          }
+<span class="nc" id="L70">          throw new IllegalArgumentException(&quot;The tag for fragment_login is invalid. Received: &quot; + tag);</span>
+        }
+        case  LAYOUT_FRAGMENTWORD: {
+<span class="pc bpc" id="L73" title="1 of 2 branches missed.">          if (&quot;layout/fragment_word_0&quot;.equals(tag)) {</span>
+<span class="fc" id="L74">            return new FragmentWordBindingImpl(component, view);</span>
+          }
+<span class="nc" id="L76">          throw new IllegalArgumentException(&quot;The tag for fragment_word is invalid. Received: &quot; + tag);</span>
+        }
+        case  LAYOUT_ITEMWORD: {
+<span class="pc bpc" id="L79" title="1 of 2 branches missed.">          if (&quot;layout/item_word_0&quot;.equals(tag)) {</span>
+<span class="fc" id="L80">            return new ItemWordBindingImpl(component, view);</span>
+          }
+<span class="nc" id="L82">          throw new IllegalArgumentException(&quot;The tag for item_word is invalid. Received: &quot; + tag);</span>
+        }
+      }
+    }
+<span class="nc" id="L86">    return null;</span>
+  }
+
+  @Override
+  public ViewDataBinding getDataBinder(DataBindingComponent component, View[] views, int layoutId) {
+<span class="nc bnc" id="L91" title="All 4 branches missed.">    if(views == null || views.length == 0) {</span>
+<span class="nc" id="L92">      return null;</span>
+    }
+<span class="nc" id="L94">    int localizedLayoutId = INTERNAL_LAYOUT_ID_LOOKUP.get(layoutId);</span>
+<span class="nc bnc" id="L95" title="All 2 branches missed.">    if(localizedLayoutId &gt; 0) {</span>
+<span class="nc" id="L96">      final Object tag = views[0].getTag();</span>
+<span class="nc bnc" id="L97" title="All 2 branches missed.">      if(tag == null) {</span>
+<span class="nc" id="L98">        throw new RuntimeException(&quot;view must have a tag&quot;);</span>
+      }
+<span class="nc" id="L100">      switch(localizedLayoutId) {</span>
+      }
+    }
+<span class="nc" id="L103">    return null;</span>
+  }
+
+  @Override
+  public int getLayoutId(String tag) {
+<span class="pc bpc" id="L108" title="1 of 2 branches missed.">    if (tag == null) {</span>
+<span class="nc" id="L109">      return 0;</span>
+    }
+<span class="fc" id="L111">    Integer tmpVal = InnerLayoutIdLookup.sKeys.get(tag);</span>
+<span class="pc bpc" id="L112" title="1 of 2 branches missed.">    return tmpVal == null ? 0 : tmpVal;</span>
+  }
+
+  @Override
+  public String convertBrIdToString(int localId) {
+<span class="nc" id="L117">    String tmpVal = InnerBrLookup.sKeys.get(localId);</span>
+<span class="nc" id="L118">    return tmpVal;</span>
+  }
+
+  @Override
+  public List&lt;DataBinderMapper&gt; collectDependencies() {
+<span class="fc" id="L123">    ArrayList&lt;DataBinderMapper&gt; result = new ArrayList&lt;DataBinderMapper&gt;(2);</span>
+<span class="fc" id="L124">    result.add(new androidx.databinding.library.baseAdapters.DataBinderMapperImpl());</span>
+<span class="fc" id="L125">    result.add(new com.emreaktrk.presentation.DataBinderMapperImpl());</span>
+<span class="fc" id="L126">    return result;</span>
+  }
+
+  private static class InnerBrLookup {
+<span class="nc" id="L130">    static final SparseArray&lt;String&gt; sKeys = new SparseArray&lt;String&gt;(3);</span>
+
+    static {
+<span class="nc" id="L133">      sKeys.put(0, &quot;_all&quot;);</span>
+<span class="nc" id="L134">      sKeys.put(1, &quot;model&quot;);</span>
+<span class="nc" id="L135">      sKeys.put(2, &quot;vm&quot;);</span>
+<span class="nc" id="L136">    }</span>
+  }
+
+  private static class InnerLayoutIdLookup {
+<span class="fc" id="L140">    static final HashMap&lt;String, Integer&gt; sKeys = new HashMap&lt;String, Integer&gt;(5);</span>
+
+    static {
+<span class="fc" id="L143">      sKeys.put(&quot;layout/activity_main_0&quot;, com.emreaktrk.sahibinden.R.layout.activity_main);</span>
+<span class="fc" id="L144">      sKeys.put(&quot;layout/fragment_detail_0&quot;, com.emreaktrk.sahibinden.R.layout.fragment_detail);</span>
+<span class="fc" id="L145">      sKeys.put(&quot;layout/fragment_login_0&quot;, com.emreaktrk.sahibinden.R.layout.fragment_login);</span>
+<span class="fc" id="L146">      sKeys.put(&quot;layout/fragment_word_0&quot;, com.emreaktrk.sahibinden.R.layout.fragment_word);</span>
+<span class="fc" id="L147">      sKeys.put(&quot;layout/item_word_0&quot;, com.emreaktrk.sahibinden.R.layout.item_word);</span>
+<span class="fc" id="L148">    }</span>
+  }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span>Generated by the Android Gradle plugin 7.4.0-alpha02</div></body></html>

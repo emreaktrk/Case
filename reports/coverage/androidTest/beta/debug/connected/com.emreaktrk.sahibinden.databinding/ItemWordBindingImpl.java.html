@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>ItemWordBindingImpl.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=0;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">betaDebug</a> &gt; <a href="index.source.html" class="el_package">com.emreaktrk.sahibinden.databinding</a> &gt; <span class="el_source">ItemWordBindingImpl.java</span></div><h1>ItemWordBindingImpl.java</h1><pre class="source lang-java linenums">package com.emreaktrk.sahibinden.databinding;
+import com.emreaktrk.sahibinden.R;
+import com.emreaktrk.sahibinden.BR;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import android.view.View;
+@SuppressWarnings(&quot;unchecked&quot;)
+public class ItemWordBindingImpl extends ItemWordBinding  {
+
+    @Nullable
+    private static final androidx.databinding.ViewDataBinding.IncludedLayouts sIncludes;
+    @Nullable
+    private static final android.util.SparseIntArray sViewsWithIds;
+    static {
+<span class="fc" id="L15">        sIncludes = null;</span>
+<span class="fc" id="L16">        sViewsWithIds = null;</span>
+<span class="fc" id="L17">    }</span>
+    // views
+    @NonNull
+    private final com.google.android.material.card.MaterialCardView mboundView0;
+    @NonNull
+    private final com.emreaktrk.presentation.view.WordView mboundView1;
+    // variables
+    // values
+    // listeners
+    // Inverse Binding Event Handlers
+
+    public ItemWordBindingImpl(@Nullable androidx.databinding.DataBindingComponent bindingComponent, @NonNull View root) {
+<span class="fc" id="L29">        this(bindingComponent, root, mapBindings(bindingComponent, root, 2, sIncludes, sViewsWithIds));</span>
+<span class="fc" id="L30">    }</span>
+    private ItemWordBindingImpl(androidx.databinding.DataBindingComponent bindingComponent, View root, Object[] bindings) {
+<span class="fc" id="L32">        super(bindingComponent, root, 0</span>
+            );
+<span class="fc" id="L34">        this.mboundView0 = (com.google.android.material.card.MaterialCardView) bindings[0];</span>
+<span class="fc" id="L35">        this.mboundView0.setTag(null);</span>
+<span class="fc" id="L36">        this.mboundView1 = (com.emreaktrk.presentation.view.WordView) bindings[1];</span>
+<span class="fc" id="L37">        this.mboundView1.setTag(null);</span>
+<span class="fc" id="L38">        setRootTag(root);</span>
+        // listeners
+<span class="fc" id="L40">        invalidateAll();</span>
+<span class="fc" id="L41">    }</span>
+
+    @Override
+    public void invalidateAll() {
+<span class="fc" id="L45">        synchronized(this) {</span>
+<span class="fc" id="L46">                mDirtyFlags = 0x2L;</span>
+<span class="fc" id="L47">        }</span>
+<span class="fc" id="L48">        requestRebind();</span>
+<span class="fc" id="L49">    }</span>
+
+    @Override
+    public boolean hasPendingBindings() {
+<span class="fc" id="L53">        synchronized(this) {</span>
+<span class="pc bpc" id="L54" title="1 of 2 branches missed.">            if (mDirtyFlags != 0) {</span>
+<span class="fc" id="L55">                return true;</span>
+            }
+<span class="nc" id="L57">        }</span>
+<span class="nc" id="L58">        return false;</span>
+    }
+
+    @Override
+    public boolean setVariable(int variableId, @Nullable Object variable)  {
+<span class="nc" id="L63">        boolean variableSet = true;</span>
+<span class="nc bnc" id="L64" title="All 2 branches missed.">        if (BR.model == variableId) {</span>
+<span class="nc" id="L65">            setModel((com.emreaktrk.core.model.WordModel) variable);</span>
+        }
+        else {
+<span class="nc" id="L68">            variableSet = false;</span>
+        }
+<span class="nc" id="L70">            return variableSet;</span>
+    }
+
+    public void setModel(@Nullable com.emreaktrk.core.model.WordModel Model) {
+<span class="fc" id="L74">        this.mModel = Model;</span>
+<span class="fc" id="L75">        synchronized(this) {</span>
+<span class="fc" id="L76">            mDirtyFlags |= 0x1L;</span>
+<span class="fc" id="L77">        }</span>
+<span class="fc" id="L78">        notifyPropertyChanged(BR.model);</span>
+<span class="fc" id="L79">        super.requestRebind();</span>
+<span class="fc" id="L80">    }</span>
+
+    @Override
+    protected boolean onFieldChange(int localFieldId, Object object, int fieldId) {
+<span class="nc" id="L84">        switch (localFieldId) {</span>
+        }
+<span class="nc" id="L86">        return false;</span>
+    }
+
+    @Override
+    protected void executeBindings() {
+<span class="fc" id="L91">        long dirtyFlags = 0;</span>
+<span class="fc" id="L92">        synchronized(this) {</span>
+<span class="fc" id="L93">            dirtyFlags = mDirtyFlags;</span>
+<span class="fc" id="L94">            mDirtyFlags = 0;</span>
+<span class="fc" id="L95">        }</span>
+<span class="fc" id="L96">        com.emreaktrk.core.model.WordModel model = mModel;</span>
+
+<span class="pc bpc" id="L98" title="1 of 2 branches missed.">        if ((dirtyFlags &amp; 0x3L) != 0) {</span>
+        }
+        // batch finished
+<span class="pc bpc" id="L101" title="1 of 2 branches missed.">        if ((dirtyFlags &amp; 0x3L) != 0) {</span>
+            // api target 1
+
+<span class="fc" id="L104">            com.emreaktrk.presentation.view.WordView.bindModel(this.mboundView1, model);</span>
+        }
+<span class="fc" id="L106">    }</span>
+    // Listener Stub Implementations
+    // callback impls
+    // dirty flag
+<span class="fc" id="L110">    private  long mDirtyFlags = 0xffffffffffffffffL;</span>
+    /* flag mapping
+        flag 0 (0x1L): model
+        flag 1 (0x2L): null
+    flag mapping end*/
+    //end
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span>Generated by the Android Gradle plugin 7.4.0-alpha02</div></body></html>
