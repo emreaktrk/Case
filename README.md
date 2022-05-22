@@ -4,7 +4,7 @@
 ![Detail](art/detail.png?raw=true "Detail")
 ![Widget](art/widget.png?raw=true "Widget")
 ![Happy Path Test Automation](art/happy_path.gif?raw=true "Happy Path Test Automation")
-![Code Coverage](art/widget.png?raw=true "Code Coverage")
+![Code Coverage](art/code_coverage.png?raw=true "Code Coverage")
 
 # Arch
 Clean arch ile multi-module uygulama yazdım Application module'de **single activity** olarak geliştirdim. Presentation katmanında **MVVM** kullandım. Jetpack Compose'u da kullanmak için bir widget geliştirdim. Olabildiğince Jetpack kütüphanelerini ve **SOLID** prensiblerini kullanmaya ve  özen gösterdim. **Offline First** örnekleri ekledim. Data katmanında **Repository Pattern** ve Domain katmanında **UseCase**'ler olarak %100 **Kotlin** ile geliştirildi.
