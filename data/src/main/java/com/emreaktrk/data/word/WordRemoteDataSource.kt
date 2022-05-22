@@ -4,10 +4,11 @@ import com.emreaktrk.core.model.Token
 import com.emreaktrk.core.model.WordModel
 import com.emreaktrk.data.IDataSource
 import com.emreaktrk.data.api.ApiClient
+import com.emreaktrk.data.api.AuthRequired
 import javax.inject.Inject
 
 class WordRemoteDataSource @Inject constructor(
-    val api: ApiClient,
+    @AuthRequired val api: ApiClient,
 ) : IDataSource {
     suspend fun shuffle(token: Token): List<WordModel> {
         val response = api.shuffle(token)

@@ -1,13 +1,13 @@
 package com.emreaktrk.domain
 
 import com.emreaktrk.core.model.Token
-import com.emreaktrk.data.user.UserRepository
+import com.emreaktrk.data.user.IUserRepository
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 import javax.inject.Inject
 
 class AuthenticationUseCase @Inject constructor(
-    private val repo: UserRepository,
+    private val repo: IUserRepository,
 ) : UseCase<AuthenticationUseCase.Params, Token>() {
     override suspend fun onInvoke(input: Params): Flow<Token> {
         return flow {

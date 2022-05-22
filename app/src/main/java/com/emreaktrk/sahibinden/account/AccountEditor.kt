@@ -10,6 +10,15 @@ import com.emreaktrk.sahibinden.account.sync.ProfileContract
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
 
+
+/**
+ * This is the class of accessing account data.
+ *
+ * This class has function: [login] which saves data to account manager as [Me].
+ *
+ * @see [AccountAuthenticator]
+ * @author Emre Akturk
+ */
 class AccountEditor(private val context: Context) {
 
     companion object {
@@ -44,6 +53,9 @@ class AccountEditor(private val context: Context) {
             }
         }
 
+    /**
+     * @throws NullPointerException if no user found.
+     */
     var me: Me
         set(value) {
             val account = AccountManager

@@ -6,6 +6,8 @@ import androidx.datastore.dataStoreFile
 import androidx.datastore.preferences.core.PreferenceDataStoreFactory
 import androidx.datastore.preferences.core.Preferences
 import com.emreaktrk.data.api.ApiClient
+import com.emreaktrk.data.api.AuthRequired
+import com.emreaktrk.data.api.NoAuthRequired
 import com.emreaktrk.data.db.WordDao
 import com.emreaktrk.data.db.WordDatabase
 import com.google.gson.Gson
@@ -27,7 +29,8 @@ object DataModule {
 
     @Singleton
     @Provides
-    fun provideApiClient(
+    @NoAuthRequired
+    fun provideNoAuthRequiredApiClient(
         gson: Gson,
     ): ApiClient {
         val logging = HttpLoggingInterceptor()
@@ -36,6 +39,37 @@ object DataModule {
         val http = OkHttpClient
             .Builder()
             .addInterceptor(logging)
+            .build()
+
+        return Retrofit
+            .Builder()
+            .client(http)
+            .baseUrl(BuildConfig.API_URL)
+            .addConverterFactory(GsonConverterFactory.create(gson))
+            .build()
+            .create(ApiClient::class.java)
+    }
+
+    @Singleton
+    @Provides
+    @AuthRequired
+    fun provideAuthRequiredApiClient(
+        gson: Gson,
+    ): ApiClient {
+        val logging = HttpLoggingInterceptor()
+        logging.setLevel(HttpLoggingInterceptor.Level.BODY)
+
+        val http = OkHttpClient
+            .Builder()
+            .addInterceptor(logging)
+            .addInterceptor {
+                val request = it
+                    .request()
+                    .newBuilder()
+                    .addHeader("Lorem", "Ipsum")
+                    .build()
+                return@addInterceptor it.proceed(request)
+            }
             .build()
 
         return Retrofit
