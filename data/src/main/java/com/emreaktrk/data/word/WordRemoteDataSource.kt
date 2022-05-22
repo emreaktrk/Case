@@ -5,6 +5,7 @@ import com.emreaktrk.core.model.WordModel
 import com.emreaktrk.data.IDataSource
 import com.emreaktrk.data.api.ApiClient
 import com.emreaktrk.data.api.AuthRequired
+import com.emreaktrk.data.api.poko.response.WordResponse2WordModelMapper
 import javax.inject.Inject
 
 class WordRemoteDataSource @Inject constructor(
@@ -13,15 +14,8 @@ class WordRemoteDataSource @Inject constructor(
     suspend fun shuffle(token: Token): List<WordModel> {
         val response = api.shuffle(token)
         if (response.success) {
-            return response.result.map {
-                WordModel(
-                    id = it._id,
-                    word = it.word,
-                    defination = it.defination,
-                    meaning = it.meaning,
-                    example = it.example,
-                )
-            }
+            val mapper = WordResponse2WordModelMapper()
+            return response.result.map { mapper.map(it) }
         }
 
         throw Exception("Unable to get response")
@@ -30,15 +24,8 @@ class WordRemoteDataSource @Inject constructor(
     suspend fun words(token: Token): List<WordModel> {
         val response = api.word(token)
         if (response.success) {
-            return response.result.map {
-                WordModel(
-                    id = it._id,
-                    word = it.word,
-                    defination = it.defination,
-                    meaning = it.meaning,
-                    example = it.example,
-                )
-            }
+            val mapper = WordResponse2WordModelMapper()
+            return response.result.map { mapper.map(it) }
         }
 
         throw Exception("Unable to get response")

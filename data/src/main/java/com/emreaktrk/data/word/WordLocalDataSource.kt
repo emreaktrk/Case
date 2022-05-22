@@ -3,7 +3,7 @@ package com.emreaktrk.data.word
 import com.emreaktrk.core.model.WordModel
 import com.emreaktrk.data.IDataSource
 import com.emreaktrk.data.db.WordDao
-import com.emreaktrk.data.db.WordEntity
+import com.emreaktrk.data.db.WordModel2WordEntityModel
 import javax.inject.Inject
 
 class WordLocalDataSource @Inject constructor(
@@ -12,50 +12,20 @@ class WordLocalDataSource @Inject constructor(
 
     suspend fun bulkInsert(list: List<WordModel>) {
         dao.deleteAll()
-        list.map {
-            WordEntity(
-                it.id,
-                it.word,
-                it.defination,
-                it.meaning,
-                it.example
-            )
-        }.forEach { dao.insertWord(it) }
+
+        val mapper = WordModel2WordEntityModel()
+        list.map { mapper.map(it) }.forEach { dao.insertWord(it) }
     }
 
     suspend fun read(): List<WordModel> {
-        return dao.getWords().map {
-            WordModel(
-                it.id,
-                it.word,
-                it.defination,
-                it.meaning,
-                it.example
-            )
-        }
+        return dao.getWords().map { it.to() }
     }
 
     suspend fun word(id: String): WordModel {
-        return dao.getWord(id).run {
-            WordModel(
-                this.id,
-                this.word,
-                this.defination,
-                this.meaning,
-                this.example
-            )
-        }
+        return dao.getWord(id).to()
     }
 
     fun random(): WordModel {
-        return dao.random().run {
-            WordModel(
-                this.id,
-                this.word,
-                this.defination,
-                this.meaning,
-                this.example
-            )
-        }
+        return dao.random().run { this.to() }
     }
 }

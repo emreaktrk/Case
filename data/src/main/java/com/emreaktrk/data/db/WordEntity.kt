@@ -4,7 +4,10 @@ import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.Index
 import androidx.room.PrimaryKey
+import com.emreaktrk.core.Mapper
+import com.emreaktrk.core.To
 import com.emreaktrk.core.model.Word
+import com.emreaktrk.core.model.WordModel
 
 @Entity(
     tableName = "words",
@@ -16,4 +19,27 @@ data class WordEntity(
     @ColumnInfo(name = "defination") val defination: String,
     @ColumnInfo(name = "meaning") val meaning: String,
     @ColumnInfo(name = "example") val example: String,
-)
+) : To<WordModel> {
+
+    override fun to(): WordModel {
+        return WordModel(
+            this.id,
+            this.word,
+            this.defination,
+            this.meaning,
+            this.example
+        )
+    }
+}
+
+class WordModel2WordEntityModel : Mapper<WordModel, WordEntity> {
+    override fun map(input: WordModel): WordEntity {
+        return WordEntity(
+            input.id,
+            input.word,
+            input.defination,
+            input.meaning,
+            input.example
+        )
+    }
+}
