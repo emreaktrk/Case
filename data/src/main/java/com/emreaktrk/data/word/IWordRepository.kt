@@ -8,4 +8,6 @@ interface IWordRepository {
     suspend fun shuffle(token: Token): List<WordModel>
 
     suspend fun shuffleAsFlow(token: Token): Flow<List<WordModel>>
+
+    suspend fun word(id: String): WordModel
 }

@@ -2,6 +2,7 @@ package com.emreaktrk.sahibinden.feature.words
 
 import android.os.Bundle
 import android.view.View
+import androidx.navigation.fragment.findNavController
 import com.emreaktrk.core.model.WordModel
 import com.emreaktrk.presentation.BaseFragment
 import com.emreaktrk.presentation.BindingSupport
@@ -41,7 +42,12 @@ class WordFragment : BaseFragment<FragmentWordBinding>(R.layout.fragment_word),
             .make(requireView(), "Words loaded.", Snackbar.LENGTH_LONG)
             .show()
 
-        val adapter = WordAdapter(list)
+        val adapter = WordAdapter(list) { vm.click(it) }
         requireBinding().recycler.adapter = adapter
+    }
+
+    override fun onClick(word: WordModel) {
+        val direction = WordFragmentDirections.navigateToDetail(word.id)
+        findNavController().navigate(direction)
     }
 }

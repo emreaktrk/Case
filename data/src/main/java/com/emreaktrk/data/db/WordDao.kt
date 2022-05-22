@@ -4,6 +4,7 @@ import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
+import com.emreaktrk.core.model.WordModel
 
 @Dao
 interface WordDao {
@@ -13,6 +14,9 @@ interface WordDao {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertWord(entity: WordEntity): Long
+
+    @Query("SELECT * FROM words WHERE id=:id")
+    suspend fun getWord(id: String): WordModel
 
     @Query("SELECT * FROM words ORDER BY RANDOM() LIMIT 1")
     fun random(): WordEntity

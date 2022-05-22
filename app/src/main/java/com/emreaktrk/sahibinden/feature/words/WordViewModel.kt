@@ -37,6 +37,10 @@ class WordViewModel @Inject constructor(
         }
     }
 
+    fun click(word: WordModel) {
+        actionHandler?.onClick(word)
+    }
+
     private suspend fun getToken(): Token? = withContext(Dispatchers.IO) {
         accountEditor.token
     }
@@ -44,5 +48,6 @@ class WordViewModel @Inject constructor(
     interface ActionHandler {
         fun onError(message: String)
         fun onLoad(list: List<WordModel>)
+        fun onClick(word: WordModel)
     }
 }

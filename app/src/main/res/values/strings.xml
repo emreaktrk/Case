@@ -13,4 +13,6 @@
     <string name="login_terms_and_conditions">Terms and Conditions</string>
 
     <string name="word_label">Word</string>
+
+    <string name="detail_label">Detail</string>
 </resources>

@@ -1,9 +1,11 @@
 plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
-    id 'kotlin-kapt'
-    id 'dagger.hilt.android.plugin'
     id 'kotlin-android'
+    id 'kotlin-kapt'
+    id 'kotlin-parcelize'
+    id 'androidx.navigation.safeargs'
+    id 'dagger.hilt.android.plugin'
 }
 
 android {
@@ -42,7 +44,9 @@ android {
     productFlavors {
         beta {
             dimension = 'env'
-            applicationIdSuffix = '.beta'
+
+            // Disabled due to compile error caused by safe-args.
+            //applicationIdSuffix = '.beta'
         }
         prod {
             dimension = 'env'

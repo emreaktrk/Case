@@ -26,7 +26,7 @@ class WordRemoteDataSource @Inject constructor(
         throw Exception("Unable to get response")
     }
 
-    suspend fun word(token: Token): List<WordModel> {
+    suspend fun words(token: Token): List<WordModel> {
         val response = api.word(token)
         if (response.success) {
             return response.result.map {

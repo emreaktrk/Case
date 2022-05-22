@@ -15,7 +15,7 @@ class WordView @JvmOverloads constructor(
     companion object {
         @JvmStatic
         @BindingAdapter("bind:model")
-        fun bindRole(view: WordView, model: WordModel) {
+        fun bindModel(view: WordView, model: WordModel?) {
             view.model = model
         }
     }

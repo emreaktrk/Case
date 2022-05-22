@@ -6,11 +6,20 @@ import androidx.recyclerview.widget.RecyclerView
 import com.emreaktrk.core.model.WordModel
 import com.emreaktrk.sahibinden.databinding.ItemWordBinding
 
-class WordAdapter(private val list: List<WordModel>) : RecyclerView.Adapter<WordAdapter.Holder>() {
+class WordAdapter(
+    private val list: List<WordModel>,
+    private val click: (word: WordModel) -> Unit
+) : RecyclerView.Adapter<WordAdapter.Holder>() {
 
-    class Holder(private val binding: ItemWordBinding) : RecyclerView.ViewHolder(binding.root) {
+    inner class Holder(
+        private val binding: ItemWordBinding
+    ) : RecyclerView.ViewHolder(binding.root) {
         fun bind(model: WordModel) {
             binding.model = model
+            binding.root.setOnClickListener {
+                val word = list[adapterPosition]
+                click.invoke(word)
+            }
         }
     }
 

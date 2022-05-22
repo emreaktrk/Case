@@ -30,4 +30,8 @@ class WordRepository @Inject constructor(
             emit(remoteData)
         }
     }
+
+    override suspend fun word(id: String): WordModel {
+        return local.word(id)
+    }
 }

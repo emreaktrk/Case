@@ -21,7 +21,7 @@ class LoginViewModel @Inject constructor(
 
     var actionHandler: ActionHandler? = null
 
-    val email = MutableLiveData<String>("ozgunergen@yandex.com")
+    val email = MutableLiveData("ozgunergen@yandex.com")
     val password = MutableLiveData<String>("Qaz!123")
 
     fun authenticate() {
