@@ -9,6 +9,8 @@ import com.emreaktrk.sahibinden.account.AccountEditor
 import com.emreaktrk.sahibinden.account.Me
 import dagger.hilt.android.scopes.FragmentScoped
 import kotlinx.coroutines.flow.catch
+import kotlinx.coroutines.flow.onCompletion
+import kotlinx.coroutines.flow.onStart
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
@@ -23,6 +25,7 @@ class LoginViewModel @Inject constructor(
 
     val email = MutableLiveData("ozgunergen@yandex.com")
     val password = MutableLiveData<String>("Qaz!123")
+    val loading = MutableLiveData(false)
 
     fun authenticate() {
         viewModelScope.launch {
@@ -31,6 +34,8 @@ class LoginViewModel @Inject constructor(
                 password.value
             )
             useCase(params)
+                .onStart { loading.value = true }
+                .onCompletion { loading.value = false }
                 .catch {
                     val message = it.message.toString()
                     actionHandler?.onError(message)

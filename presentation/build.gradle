@@ -52,6 +52,7 @@ dependencies {
     api "androidx.appcompat:appcompat:$appcompat"
     api "com.google.android.material:material:$material"
     api "androidx.constraintlayout:constraintlayout:$constraint_layout"
+    api "androidx.swiperefreshlayout:swiperefreshlayout:$swipe_refresh_layout"
 
     api "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle"
     api "androidx.lifecycle:lifecycle-livedata-ktx:$lifecycle"
